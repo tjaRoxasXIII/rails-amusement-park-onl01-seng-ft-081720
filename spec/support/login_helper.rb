@@ -20,12 +20,14 @@ module LoginHelper
     fill_in("user[name]", :with => "Walt Disney")
     fill_in("user[password]", :with => "password")
     find(:css, "#user_admin").set(true)
+    # check("user[admin]")
     click_button('Create User')
   end
 
   def admin_login
     select 'Walt Disney',from:'user_name'
-    fill_in("password", :with => "password")
+    # fill_in("password", :with => "password")
+    fill_in("user_password", :with => "password")
     click_button('Sign In')
   end
 
